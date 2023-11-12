@@ -1,0 +1,60 @@
+{% extends "base.html" %} {% block start %}
+
+<div class="container mt-5">
+  <form
+    class="col-6 mx-auto card p-3 shadow-1g"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+  {% csrf_token %}
+  <h2>Log in</h2>
+  <hr />
+  {% if messages %}
+  <div class="alert alert-primary" role="alert">
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+      </div>
+  {% endif %}
+  <!-- <script>
+    $(document).ready(function () {
+        // Initialize Bootstrap components
+        $('.dropdown-toggle').dropdown();
+    });
+
+    function toggleDropdown() {
+        var dropdown = $('#register-dropdown');
+        if (dropdown.hasClass('show')) {
+            dropdown.removeClass('show');
+        } else {
+            dropdown.addClass('show');
+        }
+    }
+</script> -->
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input name="username" required type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input name="password" type="password" class="form-control" />
+    </div>
+    <!-- <div class="dropdown">
+        <p style="display: inline;">Don't have an account?</p>
+        <button onclick="registration()" class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Register
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/seller_registration/">Option 1</a></li>
+            <li><a class="dropdown-item" href="#">Option 2</a></li>
+        </ul>
+    </div> -->
+    <p>Don't have an account? <a href="/registration/">Register</a></p>
+
+    <br>
+    <button type="submit" class="btn btn-primary">submit</button>
+
+  </form>
+</div>
+
+{% endblock %}

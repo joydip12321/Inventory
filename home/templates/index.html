@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block start %}
+
+    <h1>django tutorial</h1>
+
+    <table class="container">
+        <tr>
+        <td>SL</td>
+        <td>name</td>
+        <td>age</td>
+        <td>can vote</td>
+    </tr>
+    {% for people in peoples %}
+
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{people.name}}</td>
+        <td>{{people.age}}</td>
+        <td {% if people.age < 18%} style="background:red" {%endif%}>
+            {% if people.age >= 18 %}
+            👍
+            {% else %}
+            👎
+            {% endif %}
+        </td>
+
+    </tr>
+    {% endfor %}
+    </table>
+    {{text|truncatechars:10}}
+<br>
+    <a href="/about/">about</a>
+    |
+    <a href="/contact/">contact</a>
+    {% endblock %}
