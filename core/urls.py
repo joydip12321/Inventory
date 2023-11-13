@@ -18,7 +18,6 @@ from django.contrib import admin
 from django.urls import path
 from home.views import *
 from vege.views import *
-from Inventory.views import *
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.conf.urls.static import static
@@ -28,7 +27,6 @@ urlpatterns = [
     #  path('', , name="home"),
      path('receipe/' , receipe , name="receipe"),
      path('room/',room,name="room"),
-     path('',loginInventory,name="loginInventory"),
      path('delete_btn/<id>/',deletebtn,name="deletebtn"),
      path('updatebtn/<id>/',updatebtn,name="updatebtn"),
      path('login/',log_in,name="log_in"),
@@ -37,9 +35,8 @@ urlpatterns = [
      path('contact/',contact,name="contact"),
      path('about/',about,name="about"),
      path('admin/', admin.site.urls),
-     path('registration/',registration,name="registration"),
-     path('sellerReg/',sellerReg,name="sellerReg"),
-     path('customerReg/',customerReg,name="customerReg"),
+    #  path('sellerReg/',sellerReg,name="sellerReg"),
+    #  path('customerReg/',customerReg,name="customerReg"),
      path('Category/',Category,name="Category"),
      path('category_list/',category_list,name="category_list"),
      path('delete_bt/<id>/',deletebt,name="deletebt"),
